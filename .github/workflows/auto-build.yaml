@@ -16,7 +16,7 @@ jobs:
     
     -
       name: Log in to the Container registry
-      uses: docker/login-latest
+      uses: docker/login-action@v3
       with:
         registry: ${{ secrets.DOCKER_REGISTRY }}
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -25,13 +25,13 @@ jobs:
     -
       name: Extract metadata
       id: meta
-      uses: docker/metadata-latest
+      uses: docker/metadata-action@v5
       with:
         images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_NAMESPACE }}/${{secrets.DOCKER_IMAGENAME}}
       
     -
       name: Build and push Docker image
-      uses: docker/build-latest
+      uses: docker/build-push-action@v5
       with:
         context: ./catgpt/
         file: ./Dockerfile
