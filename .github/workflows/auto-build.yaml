@@ -39,7 +39,7 @@ jobs:
         context: ./catgpt/
         file: ./catgpt/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_IMAGENAME }}:latest
+        tags: cr.yandex/crp11pv31kieh0gjtt7j/yandex-devops-catgpt:latest
         labels: ${{ steps.meta.outputs.labels }}
     
 
