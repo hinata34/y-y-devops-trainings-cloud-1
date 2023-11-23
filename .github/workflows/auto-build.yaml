@@ -27,13 +27,17 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_NAMESPACE }}/${{secrets.DOCKER_IMAGENAME}}
-      
+    
+    -
+      run:
+        ls -al
+
     -
       name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Dockerfile
+        file: ./catgpt/Dockerfile
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
