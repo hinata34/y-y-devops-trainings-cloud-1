@@ -8,14 +8,13 @@ on:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-    environment: Test-env
     steps:
     -
       run:
         echo ${{ secrets.DOCKER_REGISTRY }}
     -
       run:
-        echo ${{ env.LOL }}
+        echo ${{ secrets.LOL }}
     -
       name: Checkout repository
       uses: actions/checkout@v4
