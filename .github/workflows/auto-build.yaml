@@ -13,6 +13,8 @@ jobs:
     -
       run:
         echo ${{ secrets.DOCKER_REGISTRY }}
+    -
+      run:
         echo hahaha
     -
       name: Checkout repository
