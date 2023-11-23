@@ -39,7 +39,7 @@ jobs:
         context: ./catgpt/
         file: ./catgpt/Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: ${{ secrets.DOCKER_IMAGENAME }}:latest
         labels: ${{ steps.meta.outputs.labels }}
     
 
