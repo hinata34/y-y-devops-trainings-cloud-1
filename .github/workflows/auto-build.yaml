@@ -15,7 +15,7 @@ jobs:
         echo ${{ secrets.DOCKER_REGISTRY }}
     -
       run:
-        echo hahaha
+        echo ${{ env.LOL }}
     -
       name: Checkout repository
       uses: actions/checkout@v4
