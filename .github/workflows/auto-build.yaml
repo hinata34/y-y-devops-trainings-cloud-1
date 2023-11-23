@@ -11,6 +11,9 @@ jobs:
 
     steps:
     -
+      run:
+        echo ${{ secrets.DOCKER_REGISTRY }}
+    -
       name: Checkout repository
       uses: actions/checkout@v4
     
