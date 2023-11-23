@@ -10,12 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     -
-      run:
-        echo ${{ secrets.DOCKER_REGISTRY }}
-    -
-      run:
-        echo ${{ secrets.LOL }}
-    -
       name: Checkout repository
       uses: actions/checkout@v4
     
