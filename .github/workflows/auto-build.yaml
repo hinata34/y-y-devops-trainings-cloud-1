@@ -30,8 +30,7 @@ jobs:
     
     -
       run:
-        ls -al
-
+        echo ${{ steps.meta.outputs.tags}}
     -
       name: Build and push Docker image
       uses: docker/build-push-action@v5
